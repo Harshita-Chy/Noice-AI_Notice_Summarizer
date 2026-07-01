@@ -70,7 +70,6 @@ graph TD
 * **Build System:** Vite
 * **Styling:** Tailwind CSS v4 (incorporating modern `@theme` custom properties)
 * **Fonts:** Playfair Display, Plus Jakarta Sans (Google Fonts)
-* **Routing:** React Router v7
 
 ### Backend & Ingestion
 * **Runtime:** Node.js

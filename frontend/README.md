@@ -9,7 +9,6 @@ This directory houses the client-side single-page application (SPA) for **noice.
 * **Library:** [React 19](https://react.dev/) (utilizing Hooks like `useState`, `useEffect`, and `useRef` for optimal state management)
 * **Build tool:** [Vite](https://vitejs.dev/) (leveraging Hot Module Replacement for near-instant development updates)
 * **Styling Framework:** [Tailwind CSS v4](https://tailwindcss.com/) (using CSS custom properties via `@theme` to define consistent styling tokens)
-* **Client Router:** [React Router v7](https://reactrouter.com/) (enabling seamless page transition between the dashboard and detail views)
 * **Typography:** Premium Google Font pair:
   * **Playfair Display** (Serif) – elegant, classic look for editorial titles and notice headings.
   * **Plus Jakarta Sans** (Sans-serif) – modern geometric type for interface controls, metadata labels, and body copy.
@@ -23,9 +22,7 @@ The client application is structured around a modular component tree:
 
 ```mermaid
 graph TD
-    App["src/App.jsx"] --> Router["React Router"]
-    Router --> Home["src/pages/Home.jsx"]
-    Router --> NoticeDetails["src/pages/NoticeDetails.jsx"]
+    App["src/App.jsx"] --> Home["src/pages/Home.jsx"]
     
     subgraph "Home Page"
         Home --> Navbar["components/Navbar.jsx"]
@@ -34,12 +31,6 @@ graph TD
         Home --> NoticeCard["components/NoticeCard.jsx"]
         Home --> Pagination["components/Pagination.jsx"]
         Home --> Footer["components/Footer.jsx"]
-    end
-    
-    subgraph "Details Page"
-        NoticeDetails --> DetailsNavbar["components/Navbar.jsx"]
-        NoticeDetails --> Checklist["Timeline & Checklists"]
-        NoticeDetails --> DetailsFooter["components/Footer.jsx"]
     end
 ```
 
