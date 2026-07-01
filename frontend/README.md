@@ -23,23 +23,23 @@ The client application is structured around a modular component tree:
 
 ```mermaid
 graph TD
-    App[src/App.jsx] --> Router[React Router]
-    Router --> Home[src/pages/Home.jsx]
-    Router --> NoticeDetails[src/pages/NoticeDetails.jsx]
+    App["src/App.jsx"] --> Router["React Router"]
+    Router --> Home["src/pages/Home.jsx"]
+    Router --> NoticeDetails["src/pages/NoticeDetails.jsx"]
     
-    subgraph Home Page
-        Home --> Navbar[components/Navbar.jsx]
-        Home --> StatsSection[components/StatsSection.jsx]
-        Home --> SearchBar[components/SearchBar.jsx]
-        Home --> NoticeCard[components/NoticeCard.jsx]
-        Home --> Pagination[components/Pagination.jsx]
-        Home --> Footer[components/Footer.jsx]
+    subgraph "Home Page"
+        Home --> Navbar["components/Navbar.jsx"]
+        Home --> StatsSection["components/StatsSection.jsx"]
+        Home --> SearchBar["components/SearchBar.jsx"]
+        Home --> NoticeCard["components/NoticeCard.jsx"]
+        Home --> Pagination["components/Pagination.jsx"]
+        Home --> Footer["components/Footer.jsx"]
     end
     
-    subgraph Details Page
-        NoticeDetails --> DetailsNavbar[components/Navbar.jsx]
-        NoticeDetails --> Checklist[Timeline & Checklists]
-        NoticeDetails --> DetailsFooter[components/Footer.jsx]
+    subgraph "Details Page"
+        NoticeDetails --> DetailsNavbar["components/Navbar.jsx"]
+        NoticeDetails --> Checklist["Timeline & Checklists"]
+        NoticeDetails --> DetailsFooter["components/Footer.jsx"]
     end
 ```
 

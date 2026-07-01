@@ -34,23 +34,23 @@ Below is the conceptual layout of the **noice.** system architecture:
 
 ```mermaid
 graph TD
-    subgraph Ingestion Pipeline (Worker)
-        A[IMS NSIT Portal] -->|cheerio scrape| B[scraper/scrape.js]
-        B -->|Link Check| C[(MongoDB)]
-        B -->|If new: download| D[utils/downloadPdf.js]
-        D -->|Temp PDF| E[services/analyzePdf.js]
-        E -->|Analyze Document| F[Gemini 2.5 Flash]
+    subgraph "Ingestion Pipeline (Worker)"
+        A["IMS NSIT Portal"] -->|cheerio scrape| B["scraper/scrape.js"]
+        B -->|Link Check| C[("MongoDB")]
+        B -->|If new: download| D["utils/downloadPdf.js"]
+        D -->|Temp PDF| E["services/analyzePdf.js"]
+        E -->|Analyze Document| F["Gemini 2.5 Flash"]
         F -->|Structured JSON Summary| E
         E -->|Save Notice + AI Metadata| C
     end
 
-    subgraph Client Application
-        H[React Frontend] -->|HTTP Request| G[Express Server]
+    subgraph "Client Application"
+        H["React Frontend"] -->|HTTP Request| G["Express Server"]
         G -->|Read Data| C
-        H -->|Display| UI[noice Dashboard]
+        H -->|Display| UI["noice Dashboard"]
     end
     
-    Scheduler[scheduler.js] -->|node-cron every minute/hour| B
+    Scheduler["scheduler.js"] -->|node-cron every minute/hour| B
 ```
 
 ### Detailed Pipeline Stages:
